@@ -14,6 +14,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Search
@@ -48,13 +49,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.triple7.megamart.R
+import com.triple7.megamart.navigation.ROUT_CATEGORIES
+import com.triple7.megamart.navigation.ROUT_CONTACT
+import com.triple7.megamart.navigation.ROUT_SCAFFOLD
 import com.triple7.megamart.ui.theme.Triple7Orange
 import com.triple7.megamart.ui.theme.TripleOrange
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ItemScreen(){
+fun ItemScreen(navController: NavController){
 
     //Main Layout
     Column(
@@ -85,6 +91,7 @@ fun ItemScreen(){
                 IconButton(onClick = {}) { Icon(imageVector = Icons.Default.ShoppingCart, contentDescription = "ShoppingCart") }
                 IconButton(onClick = {}) { Icon(imageVector = Icons.Default.ThumbUp, contentDescription = "Like") }
                 IconButton(onClick = {}) { Icon(imageVector = Icons.Default.Place, contentDescription = "Order") }
+                IconButton(onClick = {navController.navigate(ROUT_SCAFFOLD)}) { Icon(imageVector = Icons.Default.ArrowForward, contentDescription = "Order") }
 
 
             }
@@ -334,6 +341,6 @@ fun ItemScreen(){
 
 fun ItemScreentPreview(){
 
-    ItemScreen()
+    ItemScreen(rememberNavController())
 
 }

@@ -31,11 +31,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.triple7.megamart.R
+import com.triple7.megamart.navigation.ROUT_ITEM
 import com.triple7.megamart.ui.theme.Triple7Orange
 
 @Composable
-fun Home(){
+fun Home(navController: NavController){
 
     //Main layout
     Column(
@@ -124,7 +127,9 @@ fun Home(){
         Spacer(modifier = Modifier.height(20.dp))
         Button(
 
-            onClick = {},
+            onClick = {
+                navController.navigate(ROUT_ITEM)
+            },
             shape = RoundedCornerShape(15.dp),
             colors = ButtonDefaults.buttonColors(Triple7Orange),
             modifier = Modifier.fillMaxWidth(),
@@ -150,6 +155,6 @@ fun Home(){
 
 fun HomePreview(){
 
-    Home()
+    Home(rememberNavController())
 
 }

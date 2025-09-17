@@ -2,9 +2,11 @@ package com.triple7.megamart.ui.screens.contacts
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun Contacts(){
+fun Contacts(navController: NavController){
 
 
 }
@@ -15,6 +17,6 @@ fun Contacts(){
 
 fun ContactsPreview(){
 
-    Contacts()
+    Contacts(rememberNavController())
 
 }

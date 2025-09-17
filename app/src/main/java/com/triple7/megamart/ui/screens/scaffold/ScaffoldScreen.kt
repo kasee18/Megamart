@@ -34,12 +34,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.triple7.megamart.navigation.ROUT_HOME
 import com.triple7.megamart.ui.theme.Triple7Orange
 import com.triple7.megamart.ui.theme.TripleOrange
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ScaffoldScreen(){
+fun ScaffoldScreen(navController: NavController){
 
     //Scaffold
 
@@ -73,7 +76,7 @@ fun ScaffoldScreen(){
                     label = { Text("Home") },
                     selected = selectedIndex == 0,
                     onClick = { selectedIndex = 0
-                        //navController.navigate(ROUT_HOME)
+                        navController.navigate(ROUT_HOME)
                     }
                 )
                 NavigationBarItem(
@@ -81,7 +84,7 @@ fun ScaffoldScreen(){
                     label = { Text("Favorites") },
                     selected = selectedIndex == 1,
                     onClick = { selectedIndex = 1
-                        // navController.navigate(ROUT_HOME)
+                        navController.navigate(ROUT_HOME)
                     }
                 )
                 NavigationBarItem(
@@ -145,6 +148,6 @@ fun ScaffoldScreen(){
 
 fun ScaffoldScreenPreview(){
 
-    ScaffoldScreen()
+    ScaffoldScreen(rememberNavController())
 
 }
