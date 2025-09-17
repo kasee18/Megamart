@@ -10,6 +10,7 @@ import com.triple7.megamart.ui.screens.about.About
 import com.triple7.megamart.ui.screens.about.triple7
 import com.triple7.megamart.ui.screens.contacts.Contacts
 import com.triple7.megamart.ui.screens.home.Home
+import com.triple7.megamart.ui.screens.intent.IntentScreen
 import com.triple7.megamart.ui.screens.items.ItemScreen
 import com.triple7.megamart.ui.screens.scaffold.ScaffoldScreen
 import com.triple7.megamart.ui.screens.splash.SplashScreen
@@ -52,6 +53,9 @@ fun AppNavHost(
         }
         composable(ROUT_SPLASH) {
             SplashScreen(navController)
+        }
+        composable(ROUT_INTENT) {
+            IntentScreen(navController)
         }
     }
 }

@@ -13,6 +13,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -37,6 +38,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.triple7.megamart.navigation.ROUT_HOME
+import com.triple7.megamart.navigation.ROUT_INTENT
 import com.triple7.megamart.ui.theme.Triple7Orange
 import com.triple7.megamart.ui.theme.TripleOrange
 
@@ -93,6 +95,14 @@ fun ScaffoldScreen(navController: NavController){
                     selected = selectedIndex == 2,
                     onClick = { selectedIndex = 2
                         //  navController.navigate(ROUT_HOME)
+                    }
+                )
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.Info, contentDescription = "Info") },
+                    label = { Text("Info") },
+                    selected = selectedIndex == 1,
+                    onClick = { selectedIndex = 1
+                        navController.navigate(ROUT_INTENT)
                     }
                 )
 
